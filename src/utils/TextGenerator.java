@@ -23,7 +23,7 @@ public class TextGenerator {
     
     public String halfText2(String origin) {
             String r = "";
-            for (int i = 0; i <= origin.length()/2 ; i++) {
+            for (int i = 0; i < origin.length()/2 ; i++) {
                     r += origin.charAt(i);
             }
             return r;
