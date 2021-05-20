@@ -51,13 +51,26 @@ class TextGeneratorTest {
 			() -> assertEquals("", textGenerator.halfText2("")),
 			() -> assertEquals("", textGenerator.halfText2("a")),
 			() -> assertEquals("a", textGenerator.halfText2("ab")),
-			() -> assertEquals("ab", textGenerator.halfText2("abc"))
+			() -> assertEquals("a", textGenerator.halfText2("abc"))
 		);	
 	}
 	
+	
+	void checkHalfTexts(String origin) {
+		assertEquals(textGenerator.halfText(origin), textGenerator.halfText2(origin));
+	}
+	
 	@Test
-	void halfTexts() {
-		assertEquals(textGenerator.halfText("abc"), textGenerator.halfText2("abc"));
+	void halfTests() {
+		assertAll(
+//				() -> checkHalfTexts(null),
+				() -> checkHalfTexts(""),
+				() -> checkHalfTexts("a"),
+				() -> checkHalfTexts("ab"),
+				() -> checkHalfTexts("abc")
+			);
+		
+		
 	}
 	
 
